@@ -1311,6 +1311,15 @@ ul{
         padding: 2rem;
     }
 
+    .footer .container .row .image-logo{
+        width: 100%;
+    }
+
+    .footer .container .row .image-logo img{
+        display: flex;
+        margin: 0 auto;
+    }
+
 }
 
 @media (max-width:450px) {
