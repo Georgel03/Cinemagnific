@@ -78,6 +78,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function filterMovies() {
+    var selectedCategory = document.getElementById('categorie').value;
+    var selectedYear = document.getElementById('an').value;
+    var selectedRating = document.getElementById('rating').value;
+    var movieBoxes = document.querySelectorAll('.box');
+
+    movieBoxes.forEach(function (box) {
+        box.classList.remove('inactive');
+
+        var movieType = box.querySelector('.movie-type').innerText;
+        var movieYear = box.querySelector('.year').innerText;
+        var movieRating = box.querySelector('.rating').innerText;
+
+        if ((selectedCategory !== '' && movieType !== selectedCategory) || 
+            (selectedYear !== '' && movieYear !== selectedYear) || 
+            (selectedRating !== '' && movieRating !== selectedRating)) {
+            box.classList.add('inactive');
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     var swiper = new Swiper(".gallery-slider", {
         loop: true,
