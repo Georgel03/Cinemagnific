@@ -1,0 +1,708 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Nunito:wght@200;300;400;600;700&display=swap');
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 55%;
+    overflow-x: hidden;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+    background: #1B1A1A;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+section{
+    padding: 2rem 9%;
+    background: #1B1A1A;
+}
+
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #1B1A1A;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    border-bottom: 0.1rem solid white; 
+}
+
+header .logo{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+header .logo h1{
+    color: #FFF;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    
+}
+
+header .logo img{
+    width: 9rem;
+    height: 8rem;
+}
+
+header .navbar a{
+    color: #fff;
+    font-size:2rem;
+    margin:0 1.5rem;
+    text-decoration: none;
+}
+
+header .navbar a:hover{
+    color: #FFEC94;
+}
+
+#menu-bar{
+    color: #fff;
+    font-size: 3.5rem;
+    padding: .5rem 1.2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.footer{
+    background-color: #1B1A1A;
+    padding: 2rem 9%;
+    border-top: 2px solid #fff;
+}
+
+.footer img{
+    width:9rem;
+    height: 8rem;
+}
+
+.footer .container{
+    max-width: 100%;
+    margin: auto;
+}
+
+.footer .container .row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+  
+}
+
+.footer .container .row .footer-col{
+    width: 15%;
+    padding: 0;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+
+
+.footer .container .row .footer-col h4{
+    color: #fff;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.footer .container .row .footer-col ul li{
+    margin-bottom: 0.625rem;
+    color: #fff;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.footer .container .row .footer-col h4 a{
+    color: #fff;
+    /* font-family: Inter; */
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+.footer .container .row .footer-col ul li p{
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer .container .row .footer-col ul li p:hover{
+    color: #FFEC94;
+    padding-left: .5rem;
+}
+
+.footer .container .row .footer-col .social-links a {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    margin: 0 1rem 0.4rem 1rem;
+    text-align: center;
+    line-height: 1rem; /* Center the icon vertically */
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.footer .container .row .footer-col .social-links a i{
+    font-size: 2.5rem; /* Adjusted icon size */
+    line-height: 5rem; /* Adjusted line height to center vertically */
+    border-radius: 50%;
+}
+
+.footer .container .row .footer-col .social-links a i.fab.fa-youtube {
+    background-color: red;
+    width: 5rem;
+    height: 5rem;
+}
+
+.footer .container .row .footer-col .social-links a i.fab.fa-instagram {
+    background-color: purple;
+    width: 5rem;
+    height: 5rem;
+
+}
+
+.footer .container .row .footer-col .social-links a i.fab.fa-facebook-f {
+    background-color: blue;
+    width: 5rem;
+    height: 5rem;
+}
+
+ul{
+    list-style: none;
+}
+
+
+.description {
+    width: 100%;
+    margin-top: 20rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.description .main-video{
+    width:100%;
+}
+
+
+.description .about{
+    color: #fff;
+    margin-left: 5rem;
+}
+
+
+.description .about h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.description .about p{
+    font-size: 2rem;
+} 
+
+.description .about ul{
+    margin-left: 1.8rem;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+}
+
+
+.description .about ul span{
+    color: #d6c106;
+    font-weight: 600;
+    margin-left: .5rem;
+}
+
+.description .about button {
+
+    width: 20%;
+    margin-top: 2rem;
+    cursor: pointer;
+    border-radius: 1.875rem;
+    color: #420492;
+    background-color: #FFEC94;
+
+}
+
+.description .about button h2{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.gallery {
+    margin-top: 10rem;
+}
+.gallery h1{
+    color: #fff;
+    font-size: 3rem;
+}
+
+.gallery img{
+    height: 40rem;
+    width: 60rem;
+    border-radius: .5rem;
+    object-fit: cover;
+    margin-bottom: 4rem;
+}
+
+.swiper-pagination-bullet{
+    background-color: #BBAB8C;
+}
+
+.swiper-pagination-bullet-active{
+    background-color: #DED0B6;
+}
+
+
+.actor-section {
+    background-color: #1B1A1A;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.actor-section h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #fff;
+}
+
+.actor-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.actor-list li {
+    flex-basis: calc(33% - 20px); /* Adjust the percentage as needed, considering the margin */
+    margin: 10px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.actor {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.actor-image {
+    width: 50%;
+    height: 70%;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    overflow: hidden;
+}
+
+.actor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.actor-info {
+    width: 50%;
+    height: 25%;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.actor-info h3 {
+    margin: 0;
+    font-size: 2.5rem; /* Adjust the font size as needed */
+    color: #FFEC94;
+    font-weight: 600;
+}
+
+.actor-info p {
+    margin: 0;
+    font-size: 2rem; /* Adjust the font size as needed */
+    color: #fff;
+    font-weight: 600;
+}
+
+.actor-image:hover img {
+    transform: scale(1.1); /* Increase size on hover */
+}
+
+
+
+
+
+@media (max-width: 1200px) {
+
+    html{
+        font-size: 55%;
+    }
+
+    .blog .title h2 {
+        font-size: 2.5rem; /* Adjust the font size for tablets */
+    }
+
+    .blog .blog-entry h3 {
+        font-size: 2.5rem; /* Adjust the font size for tablets */
+    }
+
+    .footer .container .row .footer-col{
+        width: 50%;
+        margin-bottom: 1.875rem;
+        padding: 2rem;
+    }
+
+    .movies-container {
+        grid-template-columns: repeat(4, 1fr); /* Display 3 columns for screens <= 1024px */
+    }
+
+    .box .box-image img {
+        height: 30rem; /* Adjusted height for smaller screens */
+    }
+
+    .box h3 {
+        font-size: 2.3rem; /* Adjusted font size for smaller screens */
+    }
+
+    .box span {
+        font-size: 1.7rem; /* Adjusted font size for smaller screens */
+    }
+
+
+
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    header{
+        padding: 2rem;
+    }
+
+    #menu-bar{
+        display: initial;
+        cursor: pointer;
+        margin-right: 4rem;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%; right: 0; left: 0;
+        background: #1B1A1A;
+        border-top: .1rem solid #3b3a3a;
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .navbar a{
+        display: block;
+        border-radius: .5rem;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        background: #1B1A1A;
+        color: #fff;
+        text-align: center;
+
+    }
+
+    .blog .blog-entry {
+        flex-direction: column; /* Display in a single column for screens <= 1024px */
+        margin-top: 2rem; /* Adjusted top margin for better spacing */
+        border-bottom: none; /* Remove border-bottom for a cleaner look */
+    }
+
+    .blog .blog-entry .image {
+        flex: 0 0 100%; /* Full width for the image in smaller screens */
+        margin-right: 0; /* Remove right margin for a cleaner look */
+        margin-bottom: 1.5rem; /* Add some bottom margin for spacing */
+    }
+
+    .blog .title h2 {
+        font-size: 2.5rem; /* Adjust the font size for smaller screens */
+    }
+
+    .blog .blog-entry img {
+        width: 100%; /* Make images fill the container */
+        border-radius: 1.875rem;
+    }
+
+    .blog .blog-entry .content {
+        text-align: justify;
+    }
+
+    .blog .blog-entry h3 {
+        font-size: 2.5rem; /* Adjust the font size for smaller screens */
+        margin-bottom: 1rem;
+        color: #d6c106;
+    }
+
+    .blog .blog-entry p {
+        font-size: 2rem; /* Adjust the font size for smaller screens */
+        color: #1B1A1A;
+        text-align: justify;
+        width: 100%;
+        color: #fff;
+    }
+
+    .blog .blog-entry .read-more {
+        margin-top: 1rem;
+        font-size: 1.8rem;
+    }
+
+    .footer .container .row .footer-col{
+        width: 50%;
+        margin-bottom: 1.875rem;
+        padding: 2rem;
+    }
+
+    .movies-container {
+        grid-template-columns: repeat(3, 1fr); /* Display 3 columns for screens <= 1024px */
+    }
+
+    .box .box-image img {
+        height: 30rem; /* Adjusted height for smaller screens */
+    }
+
+    .box h3 {
+        font-size: 2rem; /* Adjusted font size for smaller screens */
+    }
+
+    .box span {
+        font-size: 1.5rem; /* Adjusted font size for smaller screens */
+    }
+
+    .contact {
+        padding: 50px ;
+    }
+
+    .contact .container{
+        flex-direction: column;
+    }
+
+    .contact .container .contactInfo {
+        margin-bottom: 40px;
+    }
+    .contact .container .contactInfo,
+    .contact .container .contactForm{
+        width: 100%;
+    }
+
+    .description {
+        flex-direction: column;
+        align-items: center;
+        text-align: justify;
+        width: 100%;
+        
+    }
+    
+    .description .main-video {
+        order: 0;
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .description .main-video .video video{
+        width: 100%;
+    }
+    
+    .description .about {
+        margin-left: 0;
+        text-align: justify;
+        margin-top: 2rem;
+        order: 1;
+        
+    }
+    
+      .description .about h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+    
+      .description .about p {
+        font-size: 1.8rem;
+      }
+    
+      .description .about ul {
+        margin-left: 1.5rem;
+        margin-top: 1rem;
+        font-size: 1.8rem;
+      }
+    
+      .description .about ul span {
+        font-weight: 400;
+      }
+    
+      .description .about button {
+        width: 20%;
+        margin-top: 2rem;
+        font-size: 1rem;
+      }
+
+    .actor-list li {
+        flex-basis: calc(50% - 20px); /* Adjust for 2 columns on screens <= 678px */
+    }
+
+}
+
+@media screen and (max-width: 678px) {
+    .thumbnail{
+        justify-content: start;
+    }
+    .slider .list .item .content h2{
+        font-size: 3rem;
+    }
+
+    .slider .list .item .content p{
+        font-size: 1.8rem;
+    }
+
+    .slider .arrows{
+        font-size: 1.5rem;
+    }
+
+    .movies-container {
+        grid-template-columns: repeat(2, 1fr); /* Display 2 columns for screens <= 678px */
+    }
+
+    .box .box-image img {
+        height: 35rem; /* Adjusted height for even smaller screens */
+    }
+
+    .box h3 {
+        font-size: 1.8rem; /* Adjusted font size for even smaller screens */
+    }
+
+    .box span {
+        font-size: 1.3rem; /* Adjusted font size for even smaller screens */
+    }
+
+    .description {
+        flex-direction: column;
+        align-items: left;
+    }
+    
+    .description .main-video {
+        order: 0;
+        margin-top: 2rem;
+        text-align: left;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .description .about {
+        margin-left: 0;
+        text-align: justify;
+        margin-top: 2rem;
+        order: 1;
+    }
+    
+    .description .about h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .description .about p {
+        font-size: 1.2rem;
+    }
+    
+    .description .about ul {
+        margin-left: 0;
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+    
+    .description .about ul span {
+        font-weight: 400;
+    }
+    
+    .description .about button {
+        width: 50%;
+        margin-top: 2rem;
+        font-size: 1.2rem;
+    }
+
+    .actor-list li {
+        flex-basis: calc(100% - 20px); /* Adjust for 1 column on screens <= 450px */
+    }
+
+    .actor-info h3 {
+        font-size: 1.5rem; /* Adjust the font size for smaller screens */
+    }
+
+    .actor-info p {
+        font-size: 1.4rem; /* Adjust the font size for smaller screens */
+    }
+    
+}
+
+@media (max-width:450px) {
+
+    html{
+        font-size: 35%;
+    }
+
+    .about .row .image img{
+        width: 100%;
+    }
+
+    .blog .title h2 {
+        font-size: 2rem; /* Adjust the font size for even smaller screens */
+        margin-top: 1.5rem; /* Adjusted top margin for better spacing */
+    }
+
+    .blog .blog-entry h3 {
+        font-size: 2rem; /* Adjust the font size for even smaller screens */
+        margin-bottom: 1rem;
+    }
+
+    .blog .blog-entry p {
+        font-size: 1.8rem; /* Adjust the font size for even smaller screens */
+    }
+
+    .blog .blog-entry .read-more {
+        font-size: 1.6rem; /* Adjust the font size for even smaller screens */
+    }
+
+    .blog .blog-entry .image {
+        margin-bottom: 1rem; /* Adjust bottom margin for better spacing */
+    }
+    
+    .blog .blog-entry img {
+        border-radius: 1.25rem; /* Adjust border-radius for smaller screens */
+    }
+    .footer .container .row .footer-col{
+        width: 100%;
+        padding: 2rem;
+    }
+
+}
