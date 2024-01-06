@@ -1115,8 +1115,14 @@ ul{
         font-size: 1.7rem; /* Reduce the font size for smaller screens */
     }
 
+    .footer .container .row .image-logo{
+        width: 100%;
+    }
 
-
+    .footer .container .row .image-logo img{
+        display: flex;
+        margin: 0 auto;
+    }
 
 }
 
