@@ -130,7 +130,17 @@
      <section class="cato-box">
         <h2>Sorteaza dupa:</h2>
         <div class="dropdown">
-            <button class="dropdown-btn"> 
+            <select name="Categorie" id="categorie">
+                <option value="" selected disabled>Categorie</option>
+                <option value="Action">Action</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Romance">Romance</option>
+                <option value="Crime">Crime</option>
+                <option value="SF">SF</option>
+                <option value="Western">Western</option>
+                <option value="Horror">Horror</option>
+            </select>
+            <!-- <button class="dropdown-btn"> 
                 <h3>Categorie</h3> 
                 <i class="fas fa-angle-down"></i>
             </button>
@@ -144,10 +154,24 @@
                     <li>Western</li>
                     <li>Horror</li>
                 </ul>
-            </div>
+            </div> -->
         </div>
         <div class="dropdown">
-            <button class="dropdown-btn"> 
+            <select name="An" id="an">
+                <option value="" selected disabled>An</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+            </select>
+            <!-- <button class="dropdown-btn"> 
                 <h3>An</h3> 
                 <i class="fas fa-angle-down"></i>
             </button>
@@ -165,10 +189,18 @@
                     <li>2014</li>
                     <li>2013</li>
                 </ul>
-            </div>
+            </div> -->
         </div>
         <div class="dropdown">
-            <button class="dropdown-btn"> 
+            <select name="Rating" id="rating">
+                <option value="" selected disabled>Rating</option>
+                <option value="9-10">9-10</option>
+                <option value="7-8">7-8</option>
+                <option value="5-6">5-6</option>
+                <option value="3-4">3-4</option>
+                <option value="1-2">1-2</option>
+            </select>
+            <!-- <button class="dropdown-btn"> 
                 <h3>Rating</h3> 
                 <i class="fas fa-angle-down"></i>
             </button>
@@ -180,7 +212,7 @@
                     <li>3-4</li>
                     <li>1-2</li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </section>
     <!--  category boxes end -->
@@ -195,7 +227,7 @@
                     </a>
                 </div>
                     <h3>Venom</h3>
-                    <span>120 min | Action</span>
+                    <div><span class="">120 min </span><span>| </span><span class="movie-type">Action</span></div>
             </div>
 
             <div class="box">
@@ -205,7 +237,7 @@
                     </a>
                 </div>
                     <h3>Avengers</h3>
-                    <span>160 min | Action</span>
+                    <div><span class="">160 min </span><span>| </span><span class="movie-type">Action</span></div>
             </div>
 
             <div class="box">
@@ -215,7 +247,7 @@
                     </a>
                 </div>
                     <h3>Interstellar</h3>
-                    <span>140 min | Thriller</span>
+                    <div><span class="">140 min </span><span>| </span><span class="movie-type">Thriller</span></div>
             </div>
 
             <div class="box">
@@ -225,7 +257,7 @@
                     </a>
                 </div>
                     <h3>Pacific-Rim</h3>
-                    <span>130 min | SF</span>
+                    <div><span class="">130 min </span><span>| </span><span class="movie-type">SF</span></div>
             </div>
 
             <div class="box">
@@ -235,7 +267,7 @@
                     </a>
                 </div>
                     <h3>Fast & Furious</h3>
-                    <span>120 min | Action</span>
+                    <div><span class="">120 min </span><span>| </span><span class="movie-type">Action</span></div>
             </div>
 
             <div class="box">
@@ -245,7 +277,7 @@
                     </a>
                 </div>
                     <h3>OUAT in Hollywood</h3>
-                    <span>160 min | Action</span>
+                    <div><span class="">160 min </span><span>| </span><span class="movie-type">Action</span></div>
             </div>
 
             
@@ -256,7 +288,7 @@
                     </a>
                 </div>
                 <h3>Bad Boys</h3>
-                <span>140 min | Action</span>
+                <div><span class="">140 min </span><span>| </span><span class="movie-type">Action</span></div>
             </div>
 
             
@@ -267,7 +299,7 @@
                     </a>
                 </div>
                 <h3>Barbie</h3>
-                <span>130 min | Thriller</span>
+                <div><span class="">130 min </span><span>| </span><span class="movie-type">Thriller</span></div>
             </div>
 
             
@@ -278,7 +310,7 @@
                     </a>
                 </div>
                     <h3>The Nun</h3>
-                    <span>120 min | Horror</span>
+                    <div><span class="">120 min </span><span>| </span><span class="movie-type">Horror</span></div>
             </div>
 
             
@@ -289,7 +321,7 @@
                     </a>
                 </div>
                     <h3>The Drak Knight</h3>
-                    <span>140 min | Crime/Sci-Fi</span>
+                    <div><span class="">140 min </span><span>| </span><span class="movie-type">Crime/Sci-Fi</span></div>
             </div>
 
             
@@ -300,7 +332,7 @@
                     </a>
                 </div>
                     <h3>Blade Runner 2049</h3>
-                    <span>130 min | Sci-FI</span>
+                    <div><span class="">130 min </span><span>| </span><span class="movie-type">Sci-FI</span></div>
             </div>
 
             
@@ -311,7 +343,7 @@
                     </a>
                 </div>
                 <h3>Creed</h3>
-                <span>110 min | Adventure</span>
+                <div><span class="">110 min </span><span>| </span><span class="movie-type">Adventure</span></div>
             </div>
 
             
@@ -322,7 +354,7 @@
                     </a>
                 </div>
                 <h3>Dune</h3>
-                <span>170 min | Sci-Fi</span>
+                <div><span class="">170 min </span><span>| </span><span class="movie-type">Sci-Fi</span></div>
             </div>
             
             <div class="box">
@@ -332,7 +364,7 @@
                     </a>
                 </div>
                 <h3>Fight Club</h3>
-                <span>140 min | Psihologic</span>
+                <div><span class="">140 min </span><span>| </span><span class="movie-type">Psihologic</span></div>
             </div>
 
             
@@ -343,7 +375,7 @@
                     </a>
                 </div>
                 <h3>Inception</h3>
-                <span>150 min | Sci-Fi</span>
+                <div><span class="">150 min </span><span>| </span><span class="movie-type">Sci-Fi</span></div>
             </div>
 
             
@@ -354,7 +386,7 @@
                     </a>
                 </div>
                     <h3>Oppenheimer</h3>
-                    <span>160 min | Thriller</span>
+                    <div><span class="">160 min </span><span>| </span><span class="movie-type">Thriller</span></div>
             </div>
 
 
@@ -366,7 +398,7 @@
                     </a>
                 </div>
                 <h3>Transformers</h3>
-                <span>140 min | Sci-Fi</span>
+                <div><span class="">140 min </span><span>| </span><span class="movie-type">Sci-Fi</span></div>
             </div>
 
 
@@ -378,7 +410,7 @@
                     </a>
                 </div>
                 <h3>Tenet</h3>
-                <span>110 min | Sci-Fi</span>
+                <div><span class="">110 min </span><span>| </span><span class="movie-type">Sci-Fi</span></div>
             </div>
 
         </div>
