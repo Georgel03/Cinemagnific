@@ -1,7 +1,7 @@
 let url = window.location.href;
 // console.log(url);
-let url_segment = url.split('?');
-// console.log(url_segment[1]);
+let url_segment = 'Blade-Runner-2049';
+//console.log(url_segment);
 
 
 let play_btn = document.getElementById('play');
@@ -28,9 +28,10 @@ video.addEventListener('ended', () => {
 
 
 let date = new Date();
-console.log(date)
+//console.log(date)
 let main_date = date.getDate();
-console.log((main_date))
+//console.log((main_date));
+//console.log(date);
 
 
 Array.from(document.getElementsByClassName('date_point')).forEach((el) => {
@@ -45,116 +46,92 @@ let pvr = [
         movie: 'Blade-Runner-2049',
         loc: 'Romania, Oradea, Strada Universitatii',
         audi: 1,
+        date: main_date,
         type: '4DX',
-        series: ['J', 'H', 'F', 'E', 'D', 'C', 'B', 'A'],
+        series: ['E', 'D', 'C', 'B', 'A'],
         row_section: 3,
-        seat: 104,
-        f: [5, 6, 15, 17, 18],
+        seat: 30,
         e: [2, 7, 8, 17, 18],
         d: [5, 16, 15, 23, 22],
         c: [1, 2, 11, 12, 19],
         b: [8, 5],
         a: [18, 10],
         price: [800, 800, 560, 560, 560, 560, 430, 430],
-        img: 'images\movies\blade-runner.png',
-        video: 'video/blade-runner-2049-trailer.mp4', // Provide the correct path
-        background: 'images\rezervations\bladerunner.png', // Provide the correct path
+        img: 'images/movies/blade-runner.png',
+        video: 'assets/gandalf.mp4', // Provide the correct path
+        background: 'images/rezervations/bladerunner.png', // Provide the correct path
     },
-    
 ];
 
-
-
-
-
-
 let addSeats = (arr) => {
-    // console.log(arr)
-    arr.forEach((el , i) => {
-        const {series, row_section , seat , price , a, b , c, d ,e ,f , h , j} = el;
+    arr.forEach((el, i) => {
+        const { series, row_section, seat, price, a, b, c, d, e } = el;
 
         // Create Row 
-        for (let index = 0; index < series.length ; index++) {
-        //   console.log(series[index]);
-        let row = document.createElement('div');
-        row.className = 'row';
+        for (let index = 0; index < series.length; index++) {
+            let row = document.createElement('div');
+            row.className = 'row';
 
-        let booked_seats = [];
-        booked_seats = [...eval(series[index].toLocaleLowerCase())];
-        // console.log(booked_seats);
+            let booked_seats = el[series[index].toLocaleLowerCase()] || [];
 
-
-        // Create Seats 
-
-        for (let seats = 0; seats < seat; seats++) {
-
-            if (seats === 0) {
-                let span = document.createElement('span');
-                span.innerText = series[index];
-                row.appendChild(span);
-            }
-
-            let li = document.createElement('li');
-            let  filter = booked_seats.filter(el => {
-                return el === seats;
-            }) 
-            // console.log(filter);
-
-            if (filter.length > 0) {
-                li.className = "seat booked";
-            } else {
-                li.className = "seat";
-            }
-
-            li.id = series[index]+seats;
-            li.setAttribute('book', seats);
-            li.setAttribute('sr', series[index]);
-            li.innerText = price[index];
-
-
-            li.onclick = () => {
-                if (li.className === 'seat booked') {
-                    li.classList.remove('selected');
-                } else {
-                    li.classList.toggle('selected');
+            // Create Seats 
+            for (let seats = 0; seats < seat; seats++) {
+                if (seats === 0) {
+                    let span = document.createElement('span');
+                    span.innerText = series[index];
+                    row.appendChild(span);
                 }
-                let len = Array.from(document.getElementsByClassName('selected')).length;
-                if (len > 0) {
-                    document.getElementById('book_ticket').style.display = 'unset';
+
+                let li = document.createElement('li');
+                let filter = booked_seats.includes(seats);
+
+                if (filter) {
+                    li.className = "seat booked";
                 } else {
-                    document.getElementById('book_ticket').style.display = 'none';
+                    li.className = "seat";
+                }
+
+                li.id = series[index] + seats;
+                li.setAttribute('book', seats);
+                li.setAttribute('sr', series[index]);
+                li.innerText = price[index];
+
+                li.onclick = () => {
+                    if (li.className === 'seat booked') {
+                        li.classList.remove('selected');
+                    } else {
+                        li.classList.toggle('selected');
+                    }
+                    let len = Array.from(document.getElementsByClassName('selected')).length;
+                    if (len > 0) {
+                        document.getElementById('book_ticket').style.display = 'unset';
+                    } else {
+                        document.getElementById('book_ticket').style.display = 'none';
+                    }
+                }
+
+                row.appendChild(li);
+
+                if (seats === seat - 1) {
+                    let span = document.createElement('span');
+                    span.innerText = series[index];
+                    row.appendChild(span);
                 }
             }
 
-
-            row.appendChild(li);
-
-            if (seats === seat-1) {
-                let span = document.createElement('span');
-                span.innerText = series[index];
-                row.appendChild(span);
-            }
+            document.getElementById('chair').appendChild(row);
         }
-
-        document.getElementById('chair').appendChild(row);
-        }
-
-        
-    })
+    });
 }
 
 
 
-let data = pvr.filter(obj => obj.date == main_date && obj.movie  == url_segment[1]);
-// console.log(data);
-
+let data = pvr.filter(obj => obj.date == main_date && obj.movie  == url_segment);
+   // console.log('dataaa',data);
 
     document.getElementById('title').innerText = data[0].movie;
     document.getElementById('poster').src = data[0].img;
     document.getElementById('video').src = data[0].video;
-
-   
-
 
 
 var styleElem = document.head.appendChild(document.createElement("style"));
@@ -179,7 +156,7 @@ Array.from(document.getElementsByClassName('date_point')).forEach(el => {
             el.classList.add('h6_active');
             main_date = +el.innerText;
             document.getElementById('chair').innerHTML = '';
-            let data = pvr.filter(obj => obj.date == main_date && obj.movie  == url_segment[1]);
+            let data = pvr.filter(obj => obj.date == main_date && obj.movie  == url_segment);
 // console.log(data);
             addSeats(data)
         }
@@ -196,24 +173,25 @@ document.getElementById('book_ticket').addEventListener('click', () => {
         let seat_price = el.innerText;
 
         let obj = {
-            movie: url_segment[1],
+            movie: url_segment,
             date : main_date
         }
 
         let getData = pvr.map((obj) => {
             if (
-                obj.movie === url_segment[1] && obj.date === main_date
+                obj.movie === url_segment && obj.date === main_date && obj.hasOwnProperty(seat_sr)
             ) {
                 obj[seat_sr].push(+seat_no);
             }
             return obj;
         });
+        
 
         // console.log(getData);
 
 
         document.getElementById('chair').innerHTML = '';
-        let data = getData.filter(obj => obj.date === main_date && obj.movie === url_segment[1]);
+        let data = getData.filter(obj => obj.date === main_date && obj.movie === url_segment);
         addSeats(data);
 
 
@@ -244,7 +222,7 @@ document.getElementById('book_ticket').addEventListener('click', () => {
                     <div class="tic_details" style=" background: url(${data[0].background})no-repeat center -35px /cover">
                         <div class="type">4DX</div>
                         <h5 class="pvr"><span>Vegus</span> Cinema</h5>
-                        <h1>${url_segment[1]}</h1>
+                        <h1>${url_segment}</h1>
                         <div class="seat_det">
                             <div class="seat_cr">
                                 <h6>ROW</h6>
