@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">  
 </head>
 <body>
@@ -19,7 +16,7 @@
         <nav class="navbar">
             <a href="filme.html">FILME</a>
             <a href="program.html">PROGRAM</a>
-            <a href="#blog">BLOG</a>
+            <a href="blog.html">BLOG</a>
             <a href="contact.html">CONTACT</a>
         </nav>
 
@@ -65,25 +62,26 @@
                 </div>
             </div>
             <div class="contactForm">
-                <form>
+                <form id="contactForm"> <!-- Added an ID for easier identification -->
                     <h2>TRIMITE MESAJ</h2>
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
+                        <input type="text" name="fullName" required="required"> <!-- Added the name attribute -->
                         <span>Nume complet</span>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
+                        <input type="email" name="email" required="required"> <!-- Added the name attribute and changed type to "email" for email validation -->
                         <span>Email</span>
                     </div>
                     <div class="inputBox">
-                        <textarea required="required"></textarea>
+                        <textarea name="message" required="required"></textarea> <!-- Added the name attribute -->
                         <span>Mesajul tau</span>
                     </div>
                     <div class="inputBox">
-                        <input type="submit" name="" value="Trimite">
+                        <input type="submit" name="submit" value="Trimite"> <!-- Added the name attribute -->
                     </div>
                 </form>
             </div>
+            
         </div>
     </section>
     
@@ -93,29 +91,25 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <img src="images/logo/logoul.png">
+                <div class="image-logo">
+                    <img src="images/logo/logoul.png">
+                </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <ul>
-                        <li>
-                           <p>0733234431</p> 
-                        </li>
-                        <li>
-                           <p>cinemagnific@yahoo.com</p> 
-                        </li>
-                    </ul>
+                    <div class="container-footer__description">
+                        <p>0733234431</p> 
+                        <p class="description-mail">cinemagnific@yahoo.com</p> 
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h4>Locatie</h4>
-                    <ul>
-                        <li>
-                            <p>Oradea, strada ciocarliei</p>
-                        </li>
-                    </ul>
+                    <div class="container-footer__description">
+                        <p>Oradea, strada ciocarliei</p>
+                    </div>
                 </div>
                 <div class="footer-col">
-                    <h4><a href=#>GDPR</a></h4>
-                    <h4><a href=#>COOKIES</a></h4>
+                    <a href=#>GDPR</a>
+                    <a href=#>COOKIES</a>
                 </div>
                 <div class="footer-col">
                     <h4>Retele de socializare</h4>
@@ -131,7 +125,39 @@
     </footer>
 
 
-
     <script src="script.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+
+
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </html>

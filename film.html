@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title> 
     <link rel="stylesheet" href="design.css">  
-    <link rel = "stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />   
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">
+        <a href="index.html" class="logo">
             <img src="images/logo/logoul.png" alt="logo">
             <h1>CINEMAGNIFIC</h1>
         </a>
@@ -43,7 +41,7 @@
                 <li>Durata : 163 minute</li>
                 <li>Rating : <span>9.3</span></li>
             </ul>
-            <button><h2>Rezerva Bilet</h2></button>
+            <button><a href ="book.html"><h2>Rezerva Bilet</h2></a></button>
         </div>
     </section>
 
@@ -179,29 +177,25 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <img src="images/logo/logoul.png">
+                <div class="image-logo">
+                    <img src="images/logo/logoul.png">
+                </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <ul>
-                        <li>
-                           <p>0733234431</p> 
-                        </li>
-                        <li>
-                           <p>cinemagnific@yahoo.com</p> 
-                        </li>
-                    </ul>
+                    <div class="container-footer__description">
+                        <p>0733234431</p> 
+                        <p class="description-mail">cinemagnific@yahoo.com</p> 
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h4>Locatie</h4>
-                    <ul>
-                        <li>
-                            <p>Oradea, strada ciocarliei</p>
-                        </li>
-                    </ul>
+                    <div class="container-footer__description">
+                        <p>Oradea, strada ciocarliei</p>
+                    </div>
                 </div>
                 <div class="footer-col">
-                    <h4><a href=#>GDPR</a></h4>
-                    <h4><a href=#>COOKIES</a></h4>
+                    <a href=#>GDPR</a>
+                    <a href=#>COOKIES</a>
                 </div>
                 <div class="footer-col">
                     <h4>Retele de socializare</h4>
@@ -216,9 +210,42 @@
 
     </footer>
 
-
-
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ 
 </body>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel = "stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </html>

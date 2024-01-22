@@ -118,3 +118,46 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('#contactForm');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = contactForm.querySelector('[name="fullName"]').value;
+            const email = contactForm.querySelector('[name="email"]').value;
+            const message = contactForm.querySelector('[name="message"]').value;
+
+            // Initialize Email.js with your user ID
+            emailjs.init({
+                user: "Mr4b0gNXL6SERVL9adr7i", // Replace with your actual User ID (Public Key)
+            });
+
+            // Prepare the email parameters
+            const emailParams = {
+                to_email: 'gstance@ymail.com', // Replace with your recipient email address
+                from_name: name,
+                from_email: email,
+                message: message
+            };
+
+            // Send the email
+            emailjs.send("default_service", "template_60vz4u6", emailParams)
+                .then(function(response) {
+                    console.log('Email sent successfully:', response);
+                    alert('Message sent successfully!');
+                    // You can also reset the form if needed
+                    contactForm.reset();
+                }, function(error) {
+                    console.error('Error sending email:', error);
+                    alert('Error sending message. Please try again.');
+                });
+        });
+    } else {
+        console.error('Contact form not found.');
+    }
+});
+
+

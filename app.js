@@ -208,11 +208,11 @@ document.getElementById('book_ticket').addEventListener('click', () => {
         tic.innerHTML = `
                     <div class="barcode">
                         <div class="card">
-                            <h6>ROW ${seat_sr.toLocaleUpperCase()}</h6>
-                            <h6>${main_date} September 2023</h6>
+                            <h6>RAND ${seat_sr.toLocaleUpperCase()}</h6>
+                            <h6>${main_date} Ianuarie 2024</h6>
                         </div>
                         <div class="card">
-                            <h6>Seat ${seat_no}</h6>
+                            <h6>LOC ${seat_no}</h6>
                             <h6>23:00</h6>
                         </div>
 
@@ -225,20 +225,20 @@ document.getElementById('book_ticket').addEventListener('click', () => {
                         <h1>${url_segment}</h1>
                         <div class="seat_det">
                             <div class="seat_cr">
-                                <h6>ROW</h6>
+                                <h6>RAND</h6>
                                 <h6>${seat_sr.toLocaleUpperCase()}</h6>
                             </div>
                             <div class="seat_cr">
-                                <h6>SEAT</h6>
+                                <h6>LOC</h6>
                                 <h6>${seat_no}</h6>
                             </div>
                             <div class="seat_cr">
-                                <h6>DATE</h6>
+                                <h6>DATA</h6>
                                 <h6>${main_date} <sub>sep</sub></h6>
                             </div>
                             <div class="seat_cr">
-                                <h6>TIME</h6>
-                                <h6>11:30 <sub>pm</sub></h6>
+                                <h6>TIMP</h6>
+                                <h6>12:00 <sub>pm</sub></h6>
                             </div>
                         </div>
                     </div>
@@ -259,3 +259,125 @@ document.getElementById('back_ticket').addEventListener('click', () => {
         document.getElementById('back_ticket').style.display = 'none';
         document.getElementById('ticket').style.display = 'none';
 })
+
+document.addEventListener('DOMContentLoaded', function () {
+    let menu = document.querySelector('#menu-bar');
+    let navbar = document.querySelector('.navbar');
+
+    let items = document.querySelectorAll('.slider .list .item');
+    let next = document.getElementById('next');
+    let prev = document.getElementById('prev');
+    let thumbnails = document.querySelectorAll('.thumbnail .item');
+
+    let itemCount = items.length;
+    let itemActive = 0;
+    let refreshInterval;
+
+    if (next && prev) {
+        next.onclick = function () {
+            itemActive = itemActive + 1;
+            if (itemActive >= itemCount) {
+                itemActive = 0;
+            }
+            showSlider();
+        };
+
+        prev.onclick = function () {
+            itemActive = itemActive - 1;
+            if (itemActive < 0) {
+                itemActive = itemCount - 1;
+            }
+            showSlider();
+        };
+
+        refreshInterval = setInterval(() => {
+            next.click();
+        }, 3000);
+    }
+
+    function showSlider() {
+        let itemActiveOld = document.querySelector('.slider .list .item.active');
+        let thumbnailActiveOld = document.querySelector('.thumbnail .item.active');
+
+        itemActiveOld.classList.remove('active');
+        thumbnailActiveOld.classList.remove('active');
+
+        items[itemActive].classList.add('active');
+        thumbnails[itemActive].classList.add('active');
+
+        clearInterval(refreshInterval);
+        if (next && prev) {
+            refreshInterval = setInterval(() => {
+                next.click();
+            }, 5000);
+        }
+    }
+
+    thumbnails.forEach((thumbnail, index) => {
+        thumbnail.addEventListener('click', () => {
+            itemActive = index;
+            showSlider();
+        });
+    });
+
+    window.onscroll = () => {
+        menu.classList.remove('fa-times');
+        navbar.classList.remove('active');
+    };
+
+    menu.addEventListener('click', () => {
+        menu.classList.toggle('fa-times');
+        navbar.classList.toggle('active');
+    });
+
+    const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+
+    dropdownBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            // Toggle the 'active' class to show/hide the dropdown
+            this.classList.toggle('active');
+        });
+    });
+});
+
+function filterMovies() {
+    var selectedCategory = document.getElementById('categorie').value;
+    var selectedYear = document.getElementById('an').value;
+    var selectedRating = document.getElementById('rating').value;
+    var movieBoxes = document.querySelectorAll('.box');
+
+    movieBoxes.forEach(function (box) {
+        box.classList.remove('inactive');
+
+        var movieType = box.querySelector('.movie-type').innerText;
+        var movieYear = box.querySelector('.year').innerText;
+        var movieRating = box.querySelector('.rating').innerText;
+
+        if ((selectedCategory !== '' && movieType !== selectedCategory) || 
+            (selectedYear !== '' && movieYear !== selectedYear) || 
+            (selectedRating !== '' && movieRating !== selectedRating)) {
+            box.classList.add('inactive');
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".gallery-slider", {
+        loop: true,
+        effect: "coverflow",
+        slidesPerView: "auto",
+        grabCursor: true,
+        centeredSlides: true,
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+});
+
